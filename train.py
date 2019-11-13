@@ -6,6 +6,7 @@ import pdb
 import argparse
 import numpy as np
 from tqdm import tqdm
+import matplotlib.pyplot as plt
 
 import torch
 import torch.nn as nn
@@ -182,6 +183,9 @@ def test(loader):
 
     val_acc = correct / total
     cnn.train()
+    image1 = plt.imshow(loader.images[0])
+    image2 = plt.imshow(loader.images[1])
+
     return val_acc
 
 
